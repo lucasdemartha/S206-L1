@@ -3,11 +3,20 @@ Feature: Testando API Pokemon.
 Background: Executa antes de cada teste
     * def url_base = 'https://pokeapi.co/api/v2/'
 
-Scenario: Testando retorno .
+Scenario: Testando retorno pikachu.
         Given url 'https://pokeapi.co/api/v2/pokemon/pikachu'
         When method get
         Then status 200
 
+Scenario: Testando retorno mewtwo.
+        Given url 'https://pokeapi.co/api/v2/pokemon/mewtwo'
+        When method get
+        Then status 200
+Scenario: Testando retorno de onde encontrar mewtwo.
+        Given url 'https://pokeapi.co/api/v2/pokemon/150/encounters'
+        When method get
+        Then status 200
+        And response.name == "cerulean-cave-b1f"
 Scenario: Testando retorno people/1/ com informações inválidas.
         Given url 'https://pokeapi.co/api/v2/pokemon/chocolate'
         When method get
