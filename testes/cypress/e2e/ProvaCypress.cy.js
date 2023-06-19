@@ -21,14 +21,16 @@ describe('Criando o cenário de teste para o site globalsqa',( ) => {
         
       })
 
-      it('Caso de teste: Tentando abrir uma conta de um usuário sem selecionar (NEGATIVO).', () => {
-        
-        cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login')
-        cy.get(':nth-child(3) > .btn').click()
-        cy.get('[ng-class="btnClass2"]').click()
-        cy.get('form.ng-pristine > button').click()
-        cy.wait(3000)
-        cy.get('form.ng-pristine > button').click()
+})
+
+describe('Criando o cenário de teste para o site computer-database (NEGATIVO)',( ) => {
+
+      it('Caso de teste: Tentando adicionar um computador sem preencher nenhum campo (NEGATIVO).', () => {
+            
+        cy.visit('https://computer-database.gatling.io/computers')
+        cy.get('#add').click()
+        cy.get('.primary').click()
+        cy.get('.error > .input > .help-inline').should('have.text', 'Failed to refine type : Predicate isEmpty() did not fail.')
       })
 
 })
