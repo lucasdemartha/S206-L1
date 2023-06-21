@@ -1,4 +1,4 @@
-# AtividadeTesteCypressS206
+# AtividadeTesteKarateS206
 
 Repositório para a entrega da prova de S206 sobre teste utilizando Karate.
 
